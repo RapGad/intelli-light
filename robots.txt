@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://intelli-light.com/sitemap.xml

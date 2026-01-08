@@ -3,15 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - intelli | light</title>
-  <meta name="description" content="Get in touch with intelli | light for quotes, inquiries, and support.">
+  <title>Contact Us - Request a Quote | intelli | light</title>
+  <meta name="description" content="Get in touch with intelli | light for quotes, inquiries, and support. Request a personalized quote for your residential solar lighting project.">
+  <meta name="keywords" content="contact intelli light, request solar quote, solar lighting support, solar light inquiries">
+  <meta name="author" content="intelli | light">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://intelli-light.com/contact.html">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intelli-light.com/contact.html">
+  <meta property="og:title" content="Contact Us - intelli | light">
+  <meta property="og:description" content="Get in touch for quotes, inquiries, and support. Request a personalized quote today.">
+  <meta property="og:image" content="https://intelli-light.com/og-image-contact.jpg">
+  <meta property="og:site_name" content="intelli | light">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us - intelli | light">
+  <meta name="twitter:description" content="Get in touch for quotes, inquiries, and support. Request a personalized quote today.">
+  <meta name="twitter:image" content="https://intelli-light.com/og-image-contact.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact intelli | light",
+    "description": "Contact page for intelli | light solar lighting solutions.",
+    "url": "https://intelli-light.com/contact.html"
+  }
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +1 (234) 567-890</span>
+        <span><i class="fa-solid fa-envelope"></i> info@intelli-light.com</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="top-bar-search">
+          <form action="#" class="search-form" id="search-form">
+            <input type="text" placeholder="Search products..." class="search-input" id="search-input">
+            <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -27,16 +83,16 @@
       
       <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="products.html" class="nav-link">Products</a></li>
-        <li><a href="specifications.html" class="nav-link">Specifications</a></li>
+        <li><a href="products.html" class="nav-link">Catalog</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="specifications.html" class="nav-link">Specs</a></li>
         <li><a href="contact.html" class="nav-link active">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Page Header -->
-  <section class="section" style="padding-top: 120px; padding-bottom: 40px; background: var(--gradient-dark);">
+  <section class="section bg-light" style="padding-top: 60px; padding-bottom: 40px;">
     <div class="container text-center">
       <h1 class="section-title">Contact Us</h1>
       <p class="section-subtitle">We're here to help you light up your world</p>
@@ -47,63 +103,83 @@
   <section class="section" id="contact">
     <div class="container">
       <div class="products-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 1000px; margin: 0 auto;">
-        <div class="card fade-in">
-          <h3>📧 Email Us</h3>
+        <div class="card fade-in" style="text-align: center;">
+          <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-md);"><i class="fa-solid fa-envelope"></i></div>
+          <h3>Email Us</h3>
           <p class="mb-md">Get in touch with our team for product inquiries, quotes, or technical support.</p>
-          <a href="mailto:info@intelligentlighting.com" class="text-primary">info@intelligentlighting.com</a>
+          <a href="mailto:info@intelli-light.com" class="text-primary">info@intelli-light.com</a>
         </div>
         
-        <div class="card fade-in">
-          <h3>📞 Call Us</h3>
+        <div class="card fade-in" style="text-align: center;">
+          <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-md);"><i class="fa-solid fa-phone"></i></div>
+          <h3>Call Us</h3>
           <p class="mb-md">Speak directly with our solar lighting experts for personalized recommendations.</p>
           <a href="tel:+1234567890" class="text-primary">+1 (234) 567-890</a>
         </div>
         
-        <div class="card fade-in">
-          <h3>📍 Visit Us</h3>
+        <div class="card fade-in" style="text-align: center;">
+          <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-md);"><i class="fa-solid fa-location-dot"></i></div>
+          <h3>Visit Us</h3>
           <p class="mb-md">Stop by our showroom to see our products in action and meet our team.</p>
           <p class="text-secondary">123 Solar Street<br>Green City, EC 12345</p>
         </div>
       </div>
       
-      <div class="fade-in mt-xl">
-        <form id="contact-form" class="card" style="max-width: 700px; margin: 0 auto;">
-          <h3 class="mb-lg">Request a Quote</h3>
+      <div class="fade-in mt-3xl">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <h3 class="text-center mb-lg">Request a Quote</h3>
           
-          <div class="form-group">
-            <label for="name" class="form-label">Full Name *</label>
-            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
-          </div>
-          
-          <div class="form-group">
-            <label for="email" class="form-label">Email Address *</label>
-            <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
-          </div>
-          
-          <div class="form-group">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (234) 567-890">
-          </div>
-          
-          <div class="form-group">
-            <label for="product" class="form-label">Product Interest</label>
-            <select id="product" name="product" class="form-select">
-              <option value="">Select a product category</option>
-              <option value="garden">Solar Garden Lights</option>
-              <option value="wall">Solar Wall Lights</option>
-              <option value="street">Solar Street Lights</option>
-              <option value="flood">Solar Flood Lights</option>
-              <option value="multiple">Multiple Products</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message" class="form-label">Message *</label>
-            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project and lighting requirements..."></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send Message</button>
-        </form>
+          <form id="contact-form" class="premium-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope input-icon"></i>
+                  <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-phone input-icon"></i>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (234) 567-890">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="product" class="form-label">Product Interest</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lightbulb input-icon"></i>
+                  <select id="product" name="product" class="form-select">
+                    <option value="">Select a category</option>
+                    <option value="garden">Solar Garden Lights</option>
+                    <option value="wall">Solar Wall Lights</option>
+                    <option value="street">Solar Street Lights</option>
+                    <option value="flood">Solar Flood Lights</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large btn-block">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -113,44 +189,42 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>intelli | light</h4>
-          <p>Leading provider of premium residential solar lighting solutions. Illuminating the future with sustainable, intelligent technology.</p>
+          <h4>About Our Company</h4>
+          <p>intelli | light is a leading provider of premium residential solar lighting solutions. We are dedicated to illuminating the future with sustainable, intelligent technology.</p>
         </div>
         
         <div class="footer-section">
-          <h4>Quick Links</h4>
+          <h4>Categories</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="specifications.html">Specifications</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html?cat=garden">Garden Lights</a></li>
+            <li><a href="products.html?cat=wall">Wall Lights</a></li>
+            <li><a href="products.html?cat=street">Street Lights</a></li>
+            <li><a href="products.html?cat=flood">Flood Lights</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
-          <h4>Products</h4>
+          <h4>Information</h4>
           <ul class="footer-links">
-            <li><a href="products.html">Solar Garden Lights</a></li>
-            <li><a href="products.html">Solar Wall Lights</a></li>
-            <li><a href="products.html">Solar Street Lights</a></li>
-            <li><a href="products.html">Solar Flood Lights</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
+            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h4>Contact Info</h4>
           <ul class="footer-links">
-            <li>📧 info@intelligentlighting.com</li>
-            <li>📞 +1 (234) 567-890</li>
-            <li>📍 123 Solar Street, Green City</li>
-            <li>🕒 Mon-Fri: 9AM-6PM</li>
+            <li><i class="fa-solid fa-location-dot"></i> 123 Solar Street, Green City</li>
+            <li><i class="fa-solid fa-phone"></i> +1 (234) 567-890</li>
+            <li><i class="fa-solid fa-envelope"></i> info@intelli-light.com</li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 intelli | light. All rights reserved. | Powering homes with sustainable solar energy.</p>
+        <p>&copy; 2026 intelli | light. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -5,17 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>intelli | light - Premium Residential Solar Lighting Solutions 2025</title>
+  <title>intelli | light - Premium Residential Solar Lighting Solutions</title>
   <meta name="description" content="Transform your home with intelli | light's premium solar solutions. Zero electricity bills, eco-friendly, and beautifully designed for modern living.">
   <meta name="keywords" content="solar lighting, residential solar lights, solar garden lights, solar wall lights, eco-friendly lighting, sustainable living">
   <meta name="author" content="intelli | light">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://intelli-light.com/">
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intelli-light.com/">
   <meta property="og:title" content="intelli | light - Premium Solar Lighting Solutions">
   <meta property="og:description" content="Transform your outdoor spaces with premium solar lighting solutions. Energy-efficient, eco-friendly, and beautifully designed.">
+  <meta property="og:image" content="https://intelli-light.com/og-image.jpg">
   <meta property="og:site_name" content="intelli | light">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="intelli | light - Premium Solar Lighting Solutions">
+  <meta name="twitter:description" content="Transform your outdoor spaces with premium solar lighting solutions. Energy-efficient, eco-friendly, and beautifully designed.">
+  <meta name="twitter:image" content="https://intelli-light.com/og-image.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "intelli | light",
+    "image": "https://intelli-light.com/logo.png",
+    "@id": "https://intelli-light.com",
+    "url": "https://intelli-light.com",
+    "telephone": "+1 (234) 567-890",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Solar Street",
+      "addressLocality": "Green City",
+      "postalCode": "12345",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.7128,
+      "longitude": -74.0060
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://facebook.com/intellilight",
+      "https://instagram.com/intellilight",
+      "https://twitter.com/intellilight"
+    ]
+  }
+  </script>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
@@ -32,6 +83,31 @@
 </head>
 <body>
   
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +1 (234) 567-890</span>
+        <span><i class="fa-solid fa-envelope"></i> info@intelli-light.com</span>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="top-bar-search">
+          <form action="#" class="search-form" id="search-form">
+            <input type="text" placeholder="Search products..." class="search-input" id="search-input">
+            <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -47,326 +123,189 @@
       
       <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="products.html" class="nav-link">Products</a></li>
-        <li><a href="specifications.html" class="nav-link">Specifications</a></li>
+        <li><a href="products.html" class="nav-link">Catalog</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="specifications.html" class="nav-link">Specs</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- 1. Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1 class="hero-title">Illuminate Your World with Solar Power</h1>
-      <p class="hero-subtitle">Premium residential solar lighting solutions that combine cutting-edge technology with sustainable energy for a brighter, greener future.</p>
-      
-      <div class="hero-benefits fade-in">
-        <span class="benefit-tag"><i class="fa-solid fa-check"></i> Zero Electricity Bills</span>
-        <span class="benefit-tag"><i class="fa-solid fa-check"></i> Easy Installation</span>
-        <span class="benefit-tag"><i class="fa-solid fa-check"></i> 5-Year Warranty</span>
-      </div>
-
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay-box">
+      <h1 class="hero-title">The Power of the Sun at Your Home</h1>
+      <p class="hero-subtitle">Premium residential solar lighting solutions. Energy-efficient, eco-friendly, and beautifully designed for modern living.</p>
       <div class="hero-cta">
-        <a href="#lead-form" class="btn btn-primary btn-large">Get Your Free Quote</a>
-        <a href="products.html" class="btn btn-secondary btn-large">Explore Products</a>
+        <a href="products.html" class="btn btn-primary btn-large">Shop Now</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. Social Proof & Trust Indicators -->
-  <section class="section bg-darker">
-    <div class="container">
-      <div class="text-center mb-xl fade-in">
-        <p class="text-muted text-uppercase letter-spacing-2">Trusted by Homeowners & Developers Across the Region</p>
-      </div>
-      
-      <div class="logos-grid fade-in">
-        <div class="logo-item"><i class="fa-solid fa-building"></i> GreenHomes</div>
-        <div class="logo-item"><i class="fa-solid fa-city"></i> EcoBuild</div>
-        <div class="logo-item"><i class="fa-solid fa-house-chimney"></i> ModernLiving</div>
-        <div class="logo-item"><i class="fa-solid fa-bolt"></i> SolarTech</div>
-        <div class="logo-item"><i class="fa-solid fa-leaf"></i> SustainableCity</div>
-      </div>
-
-      <div class="trust-indicators fade-in">
-        <div class="trust-item">
-          <span class="trust-icon"><i class="fa-solid fa-star text-warning"></i></span>
-          <span class="trust-text">4.9/5 Average Rating</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon"><i class="fa-solid fa-shield-halved text-primary"></i></span>
-          <span class="trust-text">Certified Quality</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon"><i class="fa-solid fa-users text-accent"></i></span>
-          <span class="trust-text">10,000+ Happy Customers</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Core Content: Problem/Solution & How It Works -->
+  <!-- Featured Categories -->
   <section class="section">
     <div class="container">
-      <!-- Problem/Solution -->
-      <div class="split-layout mb-3xl">
-        <div class="split-content fade-in">
-          <h2 class="section-title">Stop Paying for Outdoor Lighting</h2>
-          <p class="text-lg mb-md">Traditional outdoor lighting is expensive, requires complex wiring, and adds to your monthly electricity bill. Plus, power outages leave your home in the dark.</p>
-          <p class="text-lg"><strong>The Solution:</strong> intelli | light's advanced solar technology. Harness the sun's power to light up your home for free, every single night. No wires, no bills, just reliable, beautiful light.</p>
-          <ul class="feature-list mt-lg">
-            <li><i class="fa-solid fa-check text-primary"></i> Automatic Dusk-to-Dawn Operation</li>
-            <li><i class="fa-solid fa-check text-primary"></i> Weatherproof IP65 Design</li>
-            <li><i class="fa-solid fa-check text-primary"></i> High-Efficiency LED Technology</li>
-          </ul>
+      <div class="categories-grid fade-in">
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-solar-panel"></i></div>
+          <div class="category-name">Solar Panels</div>
         </div>
-        <div class="split-image fade-in">
-          <div class="image-placeholder gradient-card">
-            <i class="fa-regular fa-lightbulb" style="font-size: 4rem;"></i>
-          </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-recycle"></i></div>
+          <div class="category-name">Recycling</div>
         </div>
-      </div>
-
-      <!-- How It Works -->
-      <div class="section-header fade-in mt-3xl">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Switching to solar is easier than you think</p>
-      </div>
-
-      <div class="steps-grid fade-in">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Choose Your Light</h3>
-          <p>Select from our range of garden, wall, street, or flood lights.</p>
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="category-name">Electricity</div>
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>Easy Install</h3>
-          <p>Mount in minutes with no wiring required. Just place in direct sunlight.</p>
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-battery-full"></i></div>
+          <div class="category-name">Batteries</div>
         </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>Enjoy Free Light</h3>
-          <p>Lights charge during the day and turn on automatically at night.</p>
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-sun"></i></div>
+          <div class="category-name">Energy</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="category-name">Lighting</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. Reinforced Social Proof: Case Study & Testimonials -->
-  <section class="section bg-darker">
+  <!-- Promotional Banners -->
+  <section class="section bg-light">
     <div class="container">
-      <div class="section-header fade-in">
-        <h2 class="section-title">Real Results</h2>
-        <p class="section-subtitle">See how others are transforming their homes</p>
-      </div>
-
-      <!-- Case Study -->
-      <div class="case-study-card fade-in mb-3xl">
-        <div class="case-study-content">
-          <span class="badge">CASE STUDY</span>
-          <h3>The Thompson Residence</h3>
-          <p class="mb-md">"We wanted to light up our long driveway and garden but were quoted $5,000 just for wiring. intelli | light solved it for a fraction of the cost."</p>
-          <div class="stats-row">
-            <div class="stat">
-              <span class="stat-value">$0</span>
-              <span class="stat-label">Wiring Cost</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">100%</span>
-              <span class="stat-label">Solar Powered</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">2hrs</span>
-              <span class="stat-label">Installation Time</span>
-            </div>
+      <div class="promo-section fade-in">
+        <div class="promo-banner">
+          <div class="promo-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="promo-text">
+            <h3>100% Free Delivery</h3>
+            <p>On all orders over GH₵ 200. Fast and reliable shipping to your doorstep.</p>
           </div>
         </div>
-        <div class="case-study-image gradient-card">
-          <!-- Placeholder for case study image -->
-          <i class="fa-solid fa-house-chimney-window" style="font-size: 3rem;"></i>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-grid fade-in">
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i></div>
-          <p>"Absolutely blown away by the brightness. You wouldn't know they are solar powered. Highly recommend!"</p>
-          <div class="author">- Sarah J., Green City</div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i></div>
-          <p>"Best investment for our home security. The motion sensors work perfectly and the flood lights are super bright."</p>
-          <div class="author">- Michael R., Eco Valley</div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i></div>
-          <p>"Customer service was excellent. They helped me pick the right lights for my garden pathway. Looks magical at night."</p>
-          <div class="author">- Emily T., Sunny Side</div>
+        <div class="promo-banner">
+          <div class="promo-icon"><i class="fa-solid fa-tag"></i></div>
+          <div class="promo-text">
+            <h3>Get Your Discount</h3>
+            <p>Save up to 30% OFF on selected solar lighting solutions this month.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Offer Recap & CTA Reinforcement -->
+  <!-- Featured Products -->
   <section class="section">
-    <div class="container text-center">
-      <div class="offer-box fade-in">
-        <h2 class="section-title">Ready to Light Up Your Life?</h2>
-        <p class="section-subtitle mb-xl">Join the solar revolution today and start saving.</p>
-        
-        <div class="value-props-grid mb-xl">
-          <div class="vp-item"><i class="fa-solid fa-check text-primary"></i> Premium Quality</div>
-          <div class="vp-item"><i class="fa-solid fa-check text-primary"></i> 30-Day Money Back Guarantee</div>
-          <div class="vp-item"><i class="fa-solid fa-check text-primary"></i> Free Shipping on Orders Over $200</div>
-        </div>
-
-        <a href="#lead-form" class="btn btn-primary btn-large pulse-animation">Get Started Now</a>
-        <p class="text-sm mt-sm text-muted">No credit card required for consultation</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. FAQ Section -->
-  <section class="section bg-darker">
-    <div class="container" style="max-width: 800px;">
-      <div class="section-header fade-in">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-accordion fade-in">
-        <details class="faq-item">
-          <summary>Do these lights work on cloudy days?</summary>
-          <p>Yes! Our premium solar panels are designed to capture energy even on overcast days. The high-capacity batteries store enough power for 2-3 nights of illumination.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How long do the batteries last?</summary>
-          <p>The integrated lithium-ion batteries are rated for 3-5 years of daily use and are replaceable in most models.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Are they waterproof?</summary>
-          <p>Absolutely. All our lights are IP65 or IP66 rated, meaning they are fully protected against dust, rain, and snow.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I need an electrician to install them?</summary>
-          <p>No! That's the best part. Since there is no wiring, you can easily install them yourself in minutes using the included mounting hardware.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. Conversion Mechanism: Lead Capture Form -->
-  <section class="section" id="lead-form">
     <div class="container">
-      <div class="card fade-in contact-card-premium">
-        <div class="text-center mb-lg">
-          <h2 class="mb-sm">Get Your Free Solar Quote</h2>
-          <p>Fill out the form below and our experts will design a custom lighting plan for your home.</p>
+      <div class="section-header fade-in">
+        <h2 class="section-title">Top Products</h2>
+        <p class="section-subtitle">Our most popular solar lighting solutions for your home</p>
+      </div>
+
+      <div class="products-grid fade-in">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('images/solar-garden-light.png');">
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-content">
+            <div class="product-category">Garden Lights</div>
+            <h3 class="product-title">Classic Garden Light</h3>
+            <a href="contact.html?product=garden" class="btn btn-primary btn-block">Request Quote</a>
+          </div>
         </div>
-        
-        <form id="landing-contact-form" class="premium-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="landing-name" class="form-label">Full Name</label>
-              <div class="input-wrapper">
-                <i class="fa-solid fa-user input-icon"></i>
-                <input type="text" id="landing-name" class="form-input" required placeholder="John Doe">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="landing-email" class="form-label">Email Address</label>
-              <div class="input-wrapper">
-                <i class="fa-solid fa-envelope input-icon"></i>
-                <input type="email" id="landing-email" class="form-input" required placeholder="john@example.com">
-              </div>
-            </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('images/solar-wall-light.png');">
+            <span class="product-badge">Smart</span>
           </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="landing-phone" class="form-label">Phone Number</label>
-              <div class="input-wrapper">
-                <i class="fa-solid fa-phone input-icon"></i>
-                <input type="tel" id="landing-phone" class="form-input" placeholder="+1 (234) 567-890">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="landing-interest" class="form-label">I'm interested in...</label>
-              <div class="input-wrapper">
-                <i class="fa-solid fa-lightbulb input-icon"></i>
-                <select id="landing-interest" class="form-select">
-                  <option value="garden">Garden Lighting</option>
-                  <option value="security">Security/Flood Lights</option>
-                  <option value="street">Street/Driveway Lights</option>
-                  <option value="all">Complete Home Solution</option>
-                </select>
-              </div>
-            </div>
+          <div class="product-content">
+            <div class="product-category">Wall Lights</div>
+            <h3 class="product-title">Motion Sensor Wall Light</h3>
+            <a href="contact.html?product=wall" class="btn btn-primary btn-block">Request Quote</a>
           </div>
-          
-          <button type="submit" class="btn btn-primary btn-large btn-block">
-            <span>Get My Free Quote</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <p class="text-center text-xs mt-sm text-muted"><i class="fa-solid fa-lock"></i> We respect your privacy. No spam, ever.</p>
-        </form>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('images/solar-street-light.png');">
+            <span class="product-badge">Professional</span>
+          </div>
+          <div class="product-content">
+            <div class="product-category">Street Lights</div>
+            <h3 class="product-title">Residential Street Light</h3>
+            <a href="contact.html?product=street" class="btn btn-primary btn-block">Request Quote</a>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image" style="background-image: url('images/solar-flood-light.png');">
+            <span class="product-badge">Security</span>
+          </div>
+          <div class="product-content">
+            <div class="product-category">Flood Lights</div>
+            <h3 class="product-title">Security Flood Light</h3>
+            <a href="contact.html?product=flood" class="btn btn-primary btn-block">Request Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-2xl fade-in">
+        <a href="products.html" class="btn btn-secondary">View All Products</a>
       </div>
     </div>
   </section>
 
-  <!-- 7. Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>intelli | light</h4>
-          <p>Leading provider of premium residential solar lighting solutions. Illuminating the future with sustainable, intelligent technology.</p>
+          <h4>About Our Company</h4>
+          <p>intelli | light is a leading provider of premium residential solar lighting solutions. We are dedicated to illuminating the future with sustainable, intelligent technology.</p>
         </div>
         
         <div class="footer-section">
-          <h4>Quick Links</h4>
+          <h4>Categories</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html?cat=garden">Garden Lights</a></li>
+            <li><a href="products.html?cat=wall">Wall Lights</a></li>
+            <li><a href="products.html?cat=street">Street Lights</a></li>
+            <li><a href="products.html?cat=flood">Flood Lights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Information</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="specifications.html">Specifications</a></li>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h4>Contact Info</h4>
           <ul class="footer-links">
-            <li><i class="fa-solid fa-envelope"></i> info@intelligentlighting.com</li>
-            <li><i class="fa-solid fa-phone"></i> +1 (234) 567-890</li>
             <li><i class="fa-solid fa-location-dot"></i> 123 Solar Street, Green City</li>
+            <li><i class="fa-solid fa-phone"></i> +1 (234) 567-890</li>
+            <li><i class="fa-solid fa-envelope"></i> info@intelli-light.com</li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 intelli | light. All rights reserved.</p>
+        <p>&copy; 2026 intelli | light. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
-  <script>
-    // Simple handling for the landing page form
-    const landingForm = document.getElementById('landing-contact-form');
-    if (landingForm) {
-      landingForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you! Your quote request has been received. We will contact you shortly.');
-        landingForm.reset();
-      });
-    }
-  </script>
 </body>
 </html>

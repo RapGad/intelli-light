@@ -90,10 +90,6 @@ const products = {
 // Navigation & Scroll Effects
 // ============================================
 
-// ============================================
-// Navigation & Scroll Effects
-// ============================================
-
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -116,20 +112,17 @@ if (navToggle && navMenu) {
 
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
   if (navbar) {
-    if (currentScroll > 100) {
+    if (currentScroll > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
   }
-  
-  lastScroll = currentScroll;
 });
 
 // ============================================
@@ -172,12 +165,12 @@ function createProductCard(product) {
         <div class="product-specs">
           ${product.features.map(feature => `
             <span class="spec-item">
-              <span class="spec-icon">✓</span>
+              <i class="fa-solid fa-check spec-icon"></i>
               ${feature}
             </span>
           `).join('')}
         </div>
-        <a href="contact.html?product=${product.category.toLowerCase().includes('garden') ? 'garden' : product.category.toLowerCase().includes('wall') ? 'wall' : product.category.toLowerCase().includes('street') ? 'street' : 'flood'}" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: var(--space-md); justify-content: center;">Request Quote</a>
+        <a href="contact.html?product=${product.id.split('-')[0]}" class="btn btn-primary btn-block" style="margin-top: var(--space-md);">Request Quote</a>
       </div>
     </div>
   `;
@@ -203,8 +196,10 @@ function loadProducts() {
     categorySection.style.marginBottom = 'var(--space-3xl)';
     
     categorySection.innerHTML = `
-      <h3 class="mt-xl mb-md" style="font-size: var(--font-size-3xl); color: var(--color-primary);">${category.title}</h3>
-      <p class="mb-lg" style="color: var(--color-text-secondary); font-size: var(--font-size-lg);">${category.description}</p>
+      <div class="section-header" style="text-align: left; margin-bottom: var(--space-xl);">
+        <h2 class="section-title" style="margin-bottom: var(--space-xs);">${category.title}</h2>
+        <p class="section-subtitle" style="margin-left: 0;">${category.description}</p>
+      </div>
       <div class="products-grid">
         ${products[category.key].map(product => createProductCard(product)).join('')}
       </div>
@@ -222,6 +217,66 @@ function loadProducts() {
 document.addEventListener('DOMContentLoaded', loadProducts);
 
 // ============================================
+// Search Functionality
+// ============================================
+
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+const searchForm = document.getElementById('search-form');
+
+if (searchInput && searchResults) {
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      searchResults.classList.remove('active');
+      return;
+    }
+    
+    // Search across all categories
+    const results = [];
+    Object.keys(products).forEach(cat => {
+      products[cat].forEach(product => {
+        if (product.name.toLowerCase().includes(query) || 
+            product.description.toLowerCase().includes(query) ||
+            product.category.toLowerCase().includes(query)) {
+          results.push(product);
+        }
+      });
+    });
+    
+    // Display results
+    if (results.length > 0) {
+      searchResults.innerHTML = results.map(product => `
+        <a href="contact.html?product=${product.id.split('-')[0]}" class="search-result-item">
+          <div class="search-result-img" style="background-image: url('${product.image}');"></div>
+          <div class="search-result-info">
+            <h4>${product.name}</h4>
+            <p>${product.category}</p>
+          </div>
+        </a>
+      `).join('');
+      searchResults.classList.add('active');
+    } else {
+      searchResults.innerHTML = '<div class="search-result-item">No products found</div>';
+      searchResults.classList.add('active');
+    }
+  });
+
+  // Close search results when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!searchForm.contains(e.target)) {
+      searchResults.classList.remove('active');
+    }
+  });
+
+  // Prevent form submission
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+}
+
+// ============================================
 // Contact Form Handling
 // ============================================
 
@@ -235,11 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (productParam) {
     const productSelect = document.getElementById('product');
     if (productSelect) {
-      // Find the option with the matching value
-      const option = productSelect.querySelector(`option[value="${productParam}"]`);
-      if (option) {
-        productSelect.value = productParam;
-      }
+      productSelect.value = productParam;
     }
   }
 });
@@ -248,33 +299,8 @@ if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Get form data
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      product: document.getElementById('product').value,
-      message: document.getElementById('message').value
-    };
-    
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      showNotification('Please fill in all required fields.', 'error');
-      return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      showNotification('Please enter a valid email address.', 'error');
-      return;
-    }
-    
-    // Simulate form submission (in production, this would send to a server)
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    showNotification('Thank you for your inquiry! We\'ll get back to you within 24 hours.', 'success');
+    // Simulate form submission
+    showNotification('Thank you! Your quote request has been received. We will contact you shortly.', 'success');
     
     // Reset form
     contactForm.reset();
@@ -297,14 +323,14 @@ function showNotification(message, type = 'success') {
   notification.className = 'notification';
   notification.style.cssText = `
     position: fixed;
-    top: 100px;
+    top: 20px;
     right: 20px;
-    background: ${type === 'success' ? 'var(--gradient-primary)' : 'var(--color-error)'};
-    color: var(--color-bg-primary);
-    padding: var(--space-md) var(--space-lg);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-xl);
-    z-index: var(--z-tooltip);
+    background: ${type === 'success' ? '#2ecc71' : '#e74c3c'};
+    color: white;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
     font-weight: 600;
     max-width: 400px;
     animation: slideInRight 0.3s ease-out;
@@ -315,7 +341,8 @@ function showNotification(message, type = 'success') {
   
   // Auto remove after 5 seconds
   setTimeout(() => {
-    notification.style.animation = 'slideOutRight 0.3s ease-out';
+    notification.style.opacity = '0';
+    notification.style.transition = 'opacity 0.3s ease-out';
     setTimeout(() => notification.remove(), 300);
   }, 5000);
 }
@@ -324,70 +351,15 @@ function showNotification(message, type = 'success') {
 const style = document.createElement('style');
 style.textContent = `
   @keyframes slideInRight {
-    from {
-      transform: translateX(400px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideOutRight {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(400px);
-      opacity: 0;
-    }
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
 `;
 document.head.appendChild(style);
 
 // ============================================
-// Performance Optimizations
-// ============================================
-
-// Lazy load images
-if ('loading' in HTMLImageElement.prototype) {
-  const images = document.querySelectorAll('img[loading="lazy"]');
-  images.forEach(img => {
-    img.src = img.dataset.src;
-  });
-} else {
-  // Fallback for browsers that don't support lazy loading
-  const script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-  document.body.appendChild(script);
-}
-
-// Debounce scroll events for better performance
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Apply debounce to scroll-heavy operations
-const debouncedScroll = debounce(() => {
-  // Any additional scroll operations can go here
-}, 100);
-
-window.addEventListener('scroll', debouncedScroll);
-
-// ============================================
 // Console Welcome Message
 // ============================================
 
-console.log('%c🌞 intelli | light', 'font-size: 24px; font-weight: bold; color: #00ff88;');
-console.log('%cIlluminating the future with sustainable solar energy', 'font-size: 14px; color: #b8c5d6;');
-console.log('%cWebsite loaded successfully ✓', 'font-size: 12px; color: #00ff88;');
+console.log('%c🌞 intelli | light', 'font-size: 20px; font-weight: bold; color: #2ecc71;');
+console.log('%cWebsite redesigned for a cleaner, modern experience.', 'font-size: 12px; color: #666;');
