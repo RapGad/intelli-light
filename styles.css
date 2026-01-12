@@ -891,6 +891,38 @@ a:hover {
   
   .nav-toggle {
     display: flex;
+    z-index: calc(var(--z-fixed) + 1);
+  }
+  
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  .hero {
+    height: auto;
+    min-height: 400px;
+    padding: var(--space-lg);
+  }
+  
+  .hero-overlay-box {
+    max-width: 100%;
+    padding: var(--space-lg);
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
   }
   
   .form-row {
