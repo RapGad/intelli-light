@@ -14,17 +14,17 @@
 }
 
 :root {
-  /* Color Palette - Solar Energy Theme (Light) */
-  --color-primary: #2ecc71;
-  --color-primary-dark: #27ae60;
-  --color-primary-light: #abebc6;
+  /* Color Palette - Solar Energy Theme (Blue) */
+  --color-primary: #357ABD;
+  --color-primary-dark: #2d67a0;
+  --color-primary-light: #9abdde;
   --color-secondary: #f1c40f;
   
   /* Background Colors */
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f8f9fa;
   --color-bg-tertiary: #e9ecef;
-  --color-bg-overlay: rgba(46, 204, 113, 0.85);
+  --color-bg-overlay: rgba(53, 122, 189, 0.85);
   
   /* Text Colors */
   --color-text-primary: #333333;
@@ -34,12 +34,12 @@
   
   /* Accent & Status */
   --color-accent: #3498db;
-  --color-success: #2ecc71;
+  --color-success: #357ABD;
   --color-warning: #f1c40f;
   --color-error: #e74c3c;
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  --gradient-primary: linear-gradient(135deg, #357ABD 0%, #2d67a0 100%);
   --gradient-light: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
   
   /* Spacing System (4px base) */
@@ -379,7 +379,7 @@ a:hover {
 }
 
 .logo-image {
-  height: 50px;
+  height: 80px;
   width: auto;
 }
 

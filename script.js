@@ -325,7 +325,7 @@ function showNotification(message, type = 'success') {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: ${type === 'success' ? '#2ecc71' : '#e74c3c'};
+    background: ${type === 'success' ? '#357ABD' : '#e74c3c'};
     color: white;
     padding: 15px 25px;
     border-radius: 4px;
@@ -361,5 +361,5 @@ document.head.appendChild(style);
 // Console Welcome Message
 // ============================================
 
-console.log('%c🌞 intelli | light', 'font-size: 20px; font-weight: bold; color: #2ecc71;');
+console.log('%c🌞 intelli | light', 'font-size: 20px; font-weight: bold; color: #357ABD;');
 console.log('%cWebsite redesigned for a cleaner, modern experience.', 'font-size: 12px; color: #666;');
