@@ -933,3 +933,22 @@ a:hover {
     display: none;
   }
 }
+
+/* === LOGO SEPARATOR === */
+.logo-separator {
+  text-align: center;
+  padding: var(--space-2xl) 0 var(--space-lg);
+  background-color: transparent;
+}
+
+.separator-logo {
+  max-width: 500px;
+  height: auto;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: 140px;
+  }
+}
