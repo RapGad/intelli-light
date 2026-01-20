@@ -83,6 +83,17 @@ const products = {
       features: ['1800 Lumens', 'Adjustable', 'IP66 Waterproof', 'Wide Angle'],
       badge: 'Versatile'
     }
+  ],
+  cctv: [
+    {
+      id: 'cctv-1',
+      name: 'Solar CCTV Camera',
+      category: 'CCTV Cameras',
+      description: 'Smart solar-powered security camera with Wi-Fi connectivity, night vision, and motion detection.',
+      image: 'images/solar-cctv-camera.png',
+      features: ['1080p HD', 'Night Vision', 'Wi-Fi', 'Two-way Audio'],
+      badge: 'New'
+    }
   ]
 };
 
@@ -187,7 +198,8 @@ function loadProducts() {
     { key: 'garden', title: 'Solar Garden Lights', description: 'Elegant pathway and decorative lighting for gardens and outdoor spaces' },
     { key: 'wall', title: 'Solar Wall Lights', description: 'Smart wall-mounted lights for entryways, patios, and security' },
     { key: 'street', title: 'Solar Street Lights', description: 'Professional-grade lighting for streets, driveways, and parking areas' },
-    { key: 'flood', title: 'Solar Flood Lights', description: 'High-intensity lighting for security and landscape illumination' }
+    { key: 'flood', title: 'Solar Flood Lights', description: 'High-intensity lighting for security and landscape illumination' },
+    { key: 'cctv', title: 'Solar CCTV Cameras', description: 'Smart security solutions powered by the sun for 24/7 monitoring' }
   ];
   
   categories.forEach(category => {
