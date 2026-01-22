@@ -379,7 +379,7 @@ a:hover {
 }
 
 .logo-image {
-  height: 80px;
+  height: 100px;
   width: auto;
 }
 
@@ -509,15 +509,41 @@ a:hover {
 /* === HERO SECTION === */
 .hero {
   height: 600px;
-  background-image: url('images/hero_solar_home.png');
-  background-size: cover;
-  background-position: center;
+  /* background-image removed for slideshow */
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  position: relative;
+}
+
+.hero-slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 .hero-overlay-box {
+  position: relative;
+  z-index: 2;
   background-color: var(--color-bg-overlay);
   padding: var(--space-2xl);
   max-width: 500px;
@@ -667,7 +693,7 @@ a:hover {
   color: #bbbbbb;
   padding: var(--space-lg) 0 var(--space-lg);
   margin-top: auto;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .footer-content {
@@ -685,19 +711,11 @@ a:hover {
   position: relative;
 }
 
-.footer-section h4::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--color-primary);
-}
+
 
 .footer-logo {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
   height: auto;
   margin-bottom: var(--space-md);
 }
@@ -713,7 +731,7 @@ a:hover {
 .footer-links a {
   color: #999999;
   transition: all var(--transition-fast);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .footer-links a:hover {

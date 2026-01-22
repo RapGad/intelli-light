@@ -375,3 +375,22 @@ document.head.appendChild(style);
 
 console.log('%c🌞 intelli | light', 'font-size: 20px; font-weight: bold; color: #357ABD;');
 console.log('%cWebsite redesigned for a cleaner, modern experience.', 'font-size: 12px; color: #666;');
+
+/* Hero Slideshow */
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+  
+  if (slides.length === 0) return;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000); // Change every 5 seconds
+}
+
+// Initialize slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initHeroSlideshow();
+});
