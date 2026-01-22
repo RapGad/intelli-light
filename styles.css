@@ -665,9 +665,9 @@ a:hover {
 .footer {
   background-color: #222222;
   color: #bbbbbb;
-  padding: var(--space-3xl) 0 var(--space-lg);
+  padding: var(--space-lg) 0 var(--space-lg);
   margin-top: auto;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .footer-content {
@@ -695,6 +695,13 @@ a:hover {
   background-color: var(--color-primary);
 }
 
+.footer-logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: var(--space-md);
+}
+
 .footer-links {
   list-style: none;
 }
@@ -706,7 +713,7 @@ a:hover {
 .footer-links a {
   color: #999999;
   transition: all var(--transition-fast);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .footer-links a:hover {
@@ -718,7 +725,7 @@ a:hover {
   border-top: 1px solid #333333;
   padding-top: var(--space-lg);
   text-align: center;
-  font-size: var(--font-size-base);
+  font-size: 0.9rem;
 }
 
 .footer-about-text {
