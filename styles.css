@@ -571,9 +571,21 @@ a:hover {
 /* === FEATURED CATEGORIES === */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .category-card {
@@ -787,6 +799,41 @@ a:hover {
 .premium-form {
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* === ANIMATED SVG ICONS === */
+.svg-draw-icon {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-bottom: var(--space-md);
+}
+
+.svg-draw-icon path, 
+.svg-draw-icon polyline, 
+.svg-draw-icon circle, 
+.svg-draw-icon line, 
+.svg-draw-icon rect {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+
+.fade-in.visible .svg-draw-icon path,
+.fade-in.visible .svg-draw-icon polyline,
+.fade-in.visible .svg-draw-icon circle,
+.fade-in.visible .svg-draw-icon line,
+.fade-in.visible .svg-draw-icon rect {
+  animation: drawSvgIcon 2s ease-in-out forwards;
+}
+
+@keyframes drawSvgIcon {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .form-row {

@@ -83,17 +83,6 @@ const products = {
       features: ['1800 Lumens', 'Adjustable', 'IP66 Waterproof', 'Wide Angle'],
       badge: 'Versatile'
     }
-  ],
-  cctv: [
-    {
-      id: 'cctv-1',
-      name: 'Solar CCTV Camera',
-      category: 'CCTV Cameras',
-      description: 'Smart solar-powered security camera with Wi-Fi connectivity, night vision, and motion detection.',
-      image: 'images/solar-cctv-camera.png',
-      features: ['1080p HD', 'Night Vision', 'Wi-Fi', 'Two-way Audio'],
-      badge: 'New'
-    }
   ]
 };
 
@@ -390,7 +379,123 @@ function initHeroSlideshow() {
   }, 5000); // Change every 5 seconds
 }
 
-// Initialize slideshow when DOM is loaded
+/* Contact Page Products Slideshow */
+function initContactSlideshow() {
+  const container = document.getElementById('contact-products-slideshow');
+  const pagination = document.getElementById('slideshow-pagination');
+  if (!container || !pagination) return;
+  
+  // Flatten all products into one array
+  let allProducts = [];
+  Object.keys(products).forEach(cat => {
+    allProducts = allProducts.concat(products[cat]);
+  });
+  
+  if (allProducts.length === 0) return;
+  
+  // Create track for sliding
+  container.innerHTML = `<div id="slideshow-track" style="display: flex; width: ${allProducts.length * 100}%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);"></div>`;
+  const track = document.getElementById('slideshow-track');
+  
+  // Create dots container
+  pagination.innerHTML = '';
+  
+  let currentIdx = 0;
+  let intervalId = null;
+  
+  const goToSlide = (index) => {
+    currentIdx = index;
+    track.style.transform = `translateX(-${currentIdx * (100 / allProducts.length)}%)`;
+    // Update dots
+    document.querySelectorAll('.slideshow-dot').forEach((dot, idx) => {
+      dot.style.backgroundColor = idx === currentIdx ? 'var(--color-primary)' : '#ccc';
+      dot.style.transform = idx === currentIdx ? 'scale(1.2)' : 'scale(1)';
+    });
+  };
+
+  const startSlideshow = () => {
+    intervalId = setInterval(() => {
+      goToSlide((currentIdx + 1) % allProducts.length);
+    }, 4000);
+  };
+  
+  const resetSlideshow = () => {
+    clearInterval(intervalId);
+    startSlideshow();
+  };
+  
+  // Render all slides
+  allProducts.forEach((product, idx) => {
+    const slide = document.createElement('div');
+    slide.style.cssText = `width: ${100 / allProducts.length}%; height: 100%; position: relative; cursor: pointer;`;
+    slide.className = 'slide-item';
+    
+    // Background image
+    const bg = document.createElement('div');
+    bg.style.cssText = `position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('${product.image}'); background-size: contain; background-position: center; background-repeat: no-repeat; transition: transform 0.5s ease;`;
+    bg.className = 'slide-bg';
+    
+    // Details overlay (hidden by default, shown on hover)
+    const overlay = document.createElement('div');
+    overlay.className = 'slide-overlay';
+    overlay.style.cssText = `position: absolute; bottom: 0; left: 0; width: 100%; padding: var(--space-lg); background: linear-gradient(transparent, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.95)); color: white; transform: translateY(100%); transition: transform 0.4s ease-in-out; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-end; height: 60%;`;
+    
+    overlay.innerHTML = `
+      <div style="font-size: var(--font-size-xs); color: var(--color-primary-light); text-transform: uppercase; font-weight: bold; margin-bottom: 4px;">${product.category}</div>
+      <h3 style="margin-bottom: var(--space-xs); color: white; font-size: 1.2rem;">${product.name}</h3>
+      <p style="margin-bottom: var(--space-md); font-size: 0.9rem; color: #ddd;">${product.description}</p>
+      <a href="contact.html?product=${product.id.split('-')[0]}" class="btn btn-primary" style="align-self: flex-start; padding: 8px 16px; font-size: 0.85rem;">Request Quote</a>
+    `;
+    
+    slide.appendChild(bg);
+    slide.appendChild(overlay);
+    track.appendChild(slide);
+    
+    // Create dot
+    const dot = document.createElement('button');
+    dot.className = 'slideshow-dot';
+    dot.style.cssText = `width: 12px; height: 12px; border-radius: 50%; border: none; background: ${idx === 0 ? 'var(--color-primary)' : '#ccc'}; cursor: pointer; padding: 0; transition: all 0.3s ease; transform: ${idx === 0 ? 'scale(1.2)' : 'scale(1)'};`;
+    dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+    dot.addEventListener('click', () => {
+      goToSlide(idx);
+      resetSlideshow();
+    });
+    pagination.appendChild(dot);
+  });
+  
+  startSlideshow();
+}
+
+// Ensure animation for slides exists
+if (!document.getElementById('slideshow-styles')) {
+  const style = document.createElement('style');
+  style.id = 'slideshow-styles';
+  style.textContent = `
+    .slide-item:hover .slide-overlay {
+      transform: translateY(0) !important;
+    }
+    .slide-item:hover .slide-bg {
+      transform: scale(1.05);
+    }
+    .slideshow-dot:hover {
+      background-color: var(--color-primary-light) !important;
+    }
+    @media (max-width: 768px) {
+      .slide-overlay {
+        transform: translateY(0) !important;
+        height: auto !important;
+        max-height: 50%;
+      }
+      .slide-bg {
+        transform: scale(1.02);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Initialize slideshows when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   initHeroSlideshow();
+  initContactSlideshow();
 });
