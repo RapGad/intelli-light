@@ -488,6 +488,8 @@ if (!document.getElementById('slideshow-styles')) {
       }
       .slide-bg {
         transform: scale(1.02);
+        background-size: cover !important;
+        background-position: top center !important;
       }
     }
   `;

@@ -820,6 +820,7 @@ a:hover {
 .svg-draw-icon rect {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
+  fill: transparent !important;
 }
 
 .fade-in.visible .svg-draw-icon path,
