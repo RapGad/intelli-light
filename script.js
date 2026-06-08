@@ -6,6 +6,24 @@
 const products = {
   garden: [
     {
+      id: 'featured-1',
+      name: 'Recta Series',
+      category: 'Walkway Lights',
+      description: 'Powerful recessed lighting. Eco-friendly, solar-powered, robust outdoor sustainable garden and walkway lights.',
+      image: 'images/recta.jpeg',
+      bgPosition: 'left center',
+      features: [
+        'Solar Panel: Mono-crystalline',
+        'Battery: Li-ion',
+        'LED: 100lm, 3000K+4000K, Ra>70',
+        'Lens: TYPE-II',
+        'Lighting Modes: 2 modes',
+        'IP Rating: IP44',
+        'Material: A.B.S & P.V.C'
+      ],
+      badge: 'New Arrival'
+    },
+    {
       id: 'garden-1',
       name: 'Classic Garden Light',
       category: 'Garden Lights',
@@ -431,8 +449,9 @@ function initContactSlideshow() {
     slide.className = 'slide-item';
     
     // Background image
+    const bgPos = product.bgPosition || 'center';
     const bg = document.createElement('div');
-    bg.style.cssText = `position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('${product.image}'); background-size: contain; background-position: center; background-repeat: no-repeat; transition: transform 0.5s ease;`;
+    bg.style.cssText = `position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('${product.image}'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #111; transition: transform 0.5s ease;`;
     bg.className = 'slide-bg';
     
     // Details overlay (hidden by default, shown on hover)
@@ -489,7 +508,6 @@ if (!document.getElementById('slideshow-styles')) {
       .slide-bg {
         transform: scale(1.02);
         background-size: cover !important;
-        background-position: top center !important;
       }
     }
   `;
