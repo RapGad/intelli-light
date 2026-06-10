@@ -702,7 +702,7 @@ a:hover {
 /* === FOOTER === */
 .footer {
   background-color: #222222;
-  color: #bbbbbb;
+  color: #ffffff;
   padding: var(--space-lg) 0 var(--space-lg);
   margin-top: auto;
   font-size: 0.9rem;
@@ -745,7 +745,7 @@ a:hover {
 }
 
 .footer-links a {
-  color: #999999;
+  color: #ffffff;
   transition: all var(--transition-fast);
   font-size: 0.9rem;
 }
@@ -762,7 +762,9 @@ a:hover {
   font-size: 0.9rem;
 }
 
-.footer-about-text {
+.footer-about-text,
+.footer p {
+  color: #ffffff;
   line-height: 1.7;
 }
 /* === ANIMATIONS === */

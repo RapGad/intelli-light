@@ -10,7 +10,7 @@ const products = {
       name: 'Recta Series',
       category: 'Walkway Lights',
       description: 'Powerful recessed lighting. Eco-friendly, solar-powered, robust outdoor sustainable garden and walkway lights.',
-      image: 'images/recta.jpeg',
+      image: 'images/IMG1.png',
       bgPosition: 'left center',
       features: [
         'Solar Panel: Mono-crystalline',
@@ -28,7 +28,7 @@ const products = {
       name: 'Classic Garden Light',
       category: 'Garden Lights',
       description: 'Elegant solar garden light with warm white LED. Perfect for pathways, gardens, and outdoor decorative lighting.',
-      image: 'images/solar-garden-light.png',
+      image: 'images/IMG2.png',
       features: ['300 Lumens', '8-10h Runtime', 'IP65 Waterproof', 'Auto On/Off'],
       badge: 'Popular'
     },
@@ -37,7 +37,7 @@ const products = {
       name: 'Premium Garden Post',
       category: 'Garden Lights',
       description: 'High-end solar garden post light with adjustable height and enhanced brightness for larger outdoor spaces.',
-      image: 'images/solar-garden-light.png',
+      image: 'images/IMG3.png',
       features: ['400 Lumens', '10-12h Runtime', 'IP65 Waterproof', 'Adjustable'],
       badge: 'Premium'
     }
@@ -48,7 +48,7 @@ const products = {
       name: 'Motion Sensor Wall Light',
       category: 'Wall Lights',
       description: 'Smart solar wall light with PIR motion sensor. Ideal for entryways, patios, and security lighting.',
-      image: 'images/solar-wall-light.png',
+      image: 'images/IMG4.png',
       features: ['500 Lumens', 'Motion Sensor', 'IP65 Waterproof', '3 Modes'],
       badge: 'Smart'
     },
@@ -57,7 +57,7 @@ const products = {
       name: 'Decorative Wall Sconce',
       category: 'Wall Lights',
       description: 'Elegant solar wall sconce with modern design. Perfect for architectural accent and ambient lighting.',
-      image: 'images/solar-wall-light.png',
+      image: 'images/IMG5.png',
       features: ['400 Lumens', '12h Runtime', 'IP65 Waterproof', 'Elegant Design'],
       badge: 'New'
     }
@@ -68,7 +68,7 @@ const products = {
       name: 'Residential Street Light',
       category: 'Street Lights',
       description: 'Powerful solar street light for residential areas, driveways, and parking lots. Professional-grade illumination.',
-      image: 'images/solar-street-light.png',
+      image: 'images/IMG6.png',
       features: ['3000 Lumens', '15h Runtime', 'IP66 Waterproof', 'Auto Sensor'],
       badge: 'Professional'
     },
@@ -77,7 +77,7 @@ const products = {
       name: 'Commercial Street Light',
       category: 'Street Lights',
       description: 'High-power solar street light for commercial applications. Maximum brightness and extended runtime.',
-      image: 'images/solar-street-light.png',
+      image: 'images/IMG7.png',
       features: ['4000 Lumens', '18h Runtime', 'IP66 Waterproof', 'Heavy Duty'],
       badge: 'Commercial'
     }
@@ -88,7 +88,7 @@ const products = {
       name: 'Security Flood Light',
       category: 'Flood Lights',
       description: 'High-intensity solar flood light with motion detection. Perfect for security and landscape lighting.',
-      image: 'images/solar-flood-light.png',
+      image: 'images/IMG1.png',
       features: ['2000 Lumens', 'Motion Sensor', 'IP66 Waterproof', '120° Beam'],
       badge: 'Security'
     },
@@ -97,7 +97,7 @@ const products = {
       name: 'Landscape Flood Light',
       category: 'Flood Lights',
       description: 'Adjustable solar flood light for landscape and architectural lighting. Wide-angle illumination.',
-      image: 'images/solar-flood-light.png',
+      image: 'images/IMG2.png',
       features: ['1800 Lumens', 'Adjustable', 'IP66 Waterproof', 'Wide Angle'],
       badge: 'Versatile'
     }
