@@ -68,7 +68,7 @@ const products = {
       name: 'Navigator Series',
       category: 'Street Lights',
       description: 'Powerful solar street light for residential areas, driveways, and parking lots. Professional-grade illumination.',
-      image: 'images/IMG6.png',
+      image: 'images/nav.png',
       features: ['3000 Lumens', '15h Runtime', 'IP66 Waterproof', 'Auto Sensor'],
       badge: 'Professional'
     }
@@ -79,16 +79,16 @@ const products = {
       name: 'Security Flood Light',
       category: 'Flood Lights',
       description: 'High-intensity solar flood light with PIR motion detection. Ideal for perimeter security, driveways, and outdoor event lighting.',
-      image: 'images/solar-flood-light.png',
+      image: 'images/iNtelli-Light_[FLAG SERIES-L].png',
       features: ['2000 Lumens', 'Motion Sensor', 'IP66 Waterproof', '120° Beam'],
       badge: 'Security'
     },
     {
       id: 'flood-2',
-      name: 'Solar CCTV Camera',
-      category: 'Security Cameras',
-      description: 'All-in-one solar-powered CCTV camera with built-in LED flood illumination. 24/7 surveillance with zero electricity cost.',
-      image: 'images/solar-cctv-camera.png',
+      name: 'Honor Series',
+      category: 'Garden Lights',
+      description: 'High-end solar garden post light with adjustable height and enhanced brightness for larger outdoor spaces.',
+      image: 'images/iNtelli-Light_[HONOR SERIES].png',
       features: ['HD 1080p', 'Night Vision', 'IP66 Waterproof', 'Solar Powered'],
       badge: 'Smart Security'
     }
