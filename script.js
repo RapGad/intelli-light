@@ -7,7 +7,7 @@ const products = {
   garden: [
     {
       id: 'featured-1',
-      name: 'Recta Series',
+      name: 'Omega Series',
       category: 'Walkway Lights',
       description: 'Powerful recessed lighting. Eco-friendly, solar-powered, robust outdoor sustainable garden and walkway lights.',
       image: 'images/IMG1.png',
@@ -25,7 +25,7 @@ const products = {
     },
     {
       id: 'garden-1',
-      name: 'Classic Garden Light',
+      name: 'Vesta Series',
       category: 'Garden Lights',
       description: 'Elegant solar garden light with warm white LED. Perfect for pathways, gardens, and outdoor decorative lighting.',
       image: 'images/IMG2.png',
@@ -34,7 +34,7 @@ const products = {
     },
     {
       id: 'garden-2',
-      name: 'Premium Garden Post',
+      name: 'Rubusto Series',
       category: 'Garden Lights',
       description: 'High-end solar garden post light with adjustable height and enhanced brightness for larger outdoor spaces.',
       image: 'images/IMG3.png',
@@ -45,7 +45,7 @@ const products = {
   wall: [
     {
       id: 'wall-1',
-      name: 'Motion Sensor Wall Light',
+      name: 'Uranus Series',
       category: 'Wall Lights',
       description: 'Smart solar wall light with PIR motion sensor. Ideal for entryways, patios, and security lighting.',
       image: 'images/IMG4.png',
@@ -54,7 +54,7 @@ const products = {
     },
     {
       id: 'wall-2',
-      name: 'Decorative Wall Sconce',
+      name: 'Bell Series',
       category: 'Wall Lights',
       description: 'Elegant solar wall sconce with modern design. Perfect for architectural accent and ambient lighting.',
       image: 'images/IMG5.png',
@@ -65,21 +65,12 @@ const products = {
   street: [
     {
       id: 'street-1',
-      name: 'Residential Street Light',
+      name: 'Navigator Series',
       category: 'Street Lights',
       description: 'Powerful solar street light for residential areas, driveways, and parking lots. Professional-grade illumination.',
       image: 'images/IMG6.png',
       features: ['3000 Lumens', '15h Runtime', 'IP66 Waterproof', 'Auto Sensor'],
       badge: 'Professional'
-    },
-    {
-      id: 'street-2',
-      name: 'Commercial Street Light',
-      category: 'Street Lights',
-      description: 'High-power solar street light for commercial applications. Maximum brightness and extended runtime.',
-      image: 'images/IMG7.png',
-      features: ['4000 Lumens', '18h Runtime', 'IP66 Waterproof', 'Heavy Duty'],
-      badge: 'Commercial'
     }
   ],
   flood: [
@@ -87,19 +78,19 @@ const products = {
       id: 'flood-1',
       name: 'Security Flood Light',
       category: 'Flood Lights',
-      description: 'High-intensity solar flood light with motion detection. Perfect for security and landscape lighting.',
-      image: 'images/IMG1.png',
+      description: 'High-intensity solar flood light with PIR motion detection. Ideal for perimeter security, driveways, and outdoor event lighting.',
+      image: 'images/solar-flood-light.png',
       features: ['2000 Lumens', 'Motion Sensor', 'IP66 Waterproof', '120° Beam'],
       badge: 'Security'
     },
     {
       id: 'flood-2',
-      name: 'Landscape Flood Light',
-      category: 'Flood Lights',
-      description: 'Adjustable solar flood light for landscape and architectural lighting. Wide-angle illumination.',
-      image: 'images/IMG2.png',
-      features: ['1800 Lumens', 'Adjustable', 'IP66 Waterproof', 'Wide Angle'],
-      badge: 'Versatile'
+      name: 'Solar CCTV Camera',
+      category: 'Security Cameras',
+      description: 'All-in-one solar-powered CCTV camera with built-in LED flood illumination. 24/7 surveillance with zero electricity cost.',
+      image: 'images/solar-cctv-camera.png',
+      features: ['HD 1080p', 'Night Vision', 'IP66 Waterproof', 'Solar Powered'],
+      badge: 'Smart Security'
     }
   ]
 };
@@ -133,7 +124,7 @@ const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  
+
   if (navbar) {
     if (currentScroll > 50) {
       navbar.classList.add('scrolled');
@@ -196,10 +187,10 @@ function createProductCard(product) {
 
 function loadProducts() {
   const container = document.getElementById('products-container');
-  
+
   // Only load products if the container exists (i.e., on the products page)
   if (!container) return;
-  
+
   // Create category sections
   const categories = [
     { key: 'garden', title: 'Solar Garden Lights', description: 'Elegant pathway and decorative lighting for gardens and outdoor spaces' },
@@ -208,12 +199,12 @@ function loadProducts() {
     { key: 'flood', title: 'Solar Flood Lights', description: 'High-intensity lighting for security and landscape illumination' },
     { key: 'cctv', title: 'Solar CCTV Cameras', description: 'Smart security solutions powered by the sun for 24/7 monitoring' }
   ];
-  
+
   categories.forEach(category => {
     const categorySection = document.createElement('div');
     categorySection.className = 'fade-in';
     categorySection.style.marginBottom = 'var(--space-3xl)';
-    
+
     categorySection.innerHTML = `
       <div class="section-header" style="text-align: left; margin-bottom: var(--space-xl);">
         <h2 class="section-title" style="margin-bottom: var(--space-xs);">${category.title}</h2>
@@ -223,10 +214,10 @@ function loadProducts() {
         ${products[category.key].map(product => createProductCard(product)).join('')}
       </div>
     `;
-    
+
     container.appendChild(categorySection);
   });
-  
+
   // Re-observe new fade-in elements
   const newFadeElements = container.querySelectorAll('.fade-in');
   newFadeElements.forEach(el => observer.observe(el));
@@ -246,24 +237,24 @@ const searchForm = document.getElementById('search-form');
 if (searchInput && searchResults) {
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
-    
+
     if (query.length < 2) {
       searchResults.classList.remove('active');
       return;
     }
-    
+
     // Search across all categories
     const results = [];
     Object.keys(products).forEach(cat => {
       products[cat].forEach(product => {
-        if (product.name.toLowerCase().includes(query) || 
-            product.description.toLowerCase().includes(query) ||
-            product.category.toLowerCase().includes(query)) {
+        if (product.name.toLowerCase().includes(query) ||
+          product.description.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query)) {
           results.push(product);
         }
       });
     });
-    
+
     // Display results
     if (results.length > 0) {
       searchResults.innerHTML = results.map(product => `
@@ -305,7 +296,7 @@ const contactForm = document.getElementById('contact-form');
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productParam = urlParams.get('product');
-  
+
   if (productParam) {
     const productSelect = document.getElementById('product');
     if (productSelect) {
@@ -317,10 +308,10 @@ document.addEventListener('DOMContentLoaded', () => {
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Simulate form submission
     showNotification('Thank you! Your quote request has been received. We will contact you shortly.', 'success');
-    
+
     // Reset form
     contactForm.reset();
   });
@@ -336,7 +327,7 @@ function showNotification(message, type = 'success') {
   if (existingNotification) {
     existingNotification.remove();
   }
-  
+
   // Create notification element
   const notification = document.createElement('div');
   notification.className = 'notification';
@@ -355,9 +346,9 @@ function showNotification(message, type = 'success') {
     animation: slideInRight 0.3s ease-out;
   `;
   notification.textContent = message;
-  
+
   document.body.appendChild(notification);
-  
+
   // Auto remove after 5 seconds
   setTimeout(() => {
     notification.style.opacity = '0';
@@ -387,7 +378,7 @@ console.log('%cWebsite redesigned for a cleaner, modern experience.', 'font-size
 function initHeroSlideshow() {
   const slides = document.querySelectorAll('.hero-slide');
   let currentSlide = 0;
-  
+
   if (slides.length === 0) return;
 
   setInterval(() => {
@@ -402,25 +393,25 @@ function initContactSlideshow() {
   const container = document.getElementById('contact-products-slideshow');
   const pagination = document.getElementById('slideshow-pagination');
   if (!container || !pagination) return;
-  
+
   // Flatten all products into one array
   let allProducts = [];
   Object.keys(products).forEach(cat => {
     allProducts = allProducts.concat(products[cat]);
   });
-  
+
   if (allProducts.length === 0) return;
-  
+
   // Create track for sliding
   container.innerHTML = `<div id="slideshow-track" style="display: flex; width: ${allProducts.length * 100}%; height: 100%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);"></div>`;
   const track = document.getElementById('slideshow-track');
-  
+
   // Create dots container
   pagination.innerHTML = '';
-  
+
   let currentIdx = 0;
   let intervalId = null;
-  
+
   const goToSlide = (index) => {
     currentIdx = index;
     track.style.transform = `translateX(-${currentIdx * (100 / allProducts.length)}%)`;
@@ -436,40 +427,40 @@ function initContactSlideshow() {
       goToSlide((currentIdx + 1) % allProducts.length);
     }, 4000);
   };
-  
+
   const resetSlideshow = () => {
     clearInterval(intervalId);
     startSlideshow();
   };
-  
+
   // Render all slides
   allProducts.forEach((product, idx) => {
     const slide = document.createElement('div');
     slide.style.cssText = `width: ${100 / allProducts.length}%; height: 100%; position: relative; cursor: pointer;`;
     slide.className = 'slide-item';
-    
+
     // Background image
     const bgPos = product.bgPosition || 'center';
     const bg = document.createElement('div');
     bg.style.cssText = `position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('${product.image}'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #111; transition: transform 0.5s ease;`;
     bg.className = 'slide-bg';
-    
+
     // Details overlay (hidden by default, shown on hover)
     const overlay = document.createElement('div');
     overlay.className = 'slide-overlay';
     overlay.style.cssText = `position: absolute; bottom: 0; left: 0; width: 100%; padding: var(--space-lg); background: linear-gradient(transparent, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.95)); color: white; transform: translateY(100%); transition: transform 0.4s ease-in-out; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-end; height: 60%;`;
-    
+
     overlay.innerHTML = `
       <div style="font-size: var(--font-size-xs); color: var(--color-primary-light); text-transform: uppercase; font-weight: bold; margin-bottom: 4px;">${product.category}</div>
       <h3 style="margin-bottom: var(--space-xs); color: white; font-size: 1.2rem;">${product.name}</h3>
       <p style="margin-bottom: var(--space-md); font-size: 0.9rem; color: #ddd;">${product.description}</p>
       <a href="contact.html?product=${product.id.split('-')[0]}" class="btn btn-primary" style="align-self: flex-start; padding: 8px 16px; font-size: 0.85rem;">Request Quote</a>
     `;
-    
+
     slide.appendChild(bg);
     slide.appendChild(overlay);
     track.appendChild(slide);
-    
+
     // Create dot
     const dot = document.createElement('button');
     dot.className = 'slideshow-dot';
@@ -481,7 +472,7 @@ function initContactSlideshow() {
     });
     pagination.appendChild(dot);
   });
-  
+
   startSlideshow();
 }
 
