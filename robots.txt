@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://intelli-light.com/sitemap.xml
+Sitemap: https://intelli-lightgh.com/sitemap.xml
